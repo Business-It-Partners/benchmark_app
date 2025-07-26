@@ -1,3 +1,5 @@
 {
-    "cmake.ignoreCMakeListsMissing": true
+    "cmake.ignoreCMakeListsMissing": true,
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "postman.settings.dotenv-detection-notification-visibility": false
 }

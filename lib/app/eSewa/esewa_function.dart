@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:benchmark/app/modules/common/note_purchase/note_purchase_controller.dart';
-import 'package:esewa_flutter_sdk/esewa_config.dart';
-import 'package:esewa_flutter_sdk/esewa_flutter_sdk.dart';
-import 'package:esewa_flutter_sdk/esewa_payment.dart';
-import 'package:esewa_flutter_sdk/esewa_payment_success_result.dart';
+// import 'package:esewa_flutter_sdk/esewa_config.dart';
+// import 'package:esewa_flutter_sdk/esewa_flutter_sdk.dart';
+// import 'package:esewa_flutter_sdk/esewa_payment.dart';
+// import 'package:esewa_flutter_sdk/esewa_payment_success_result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
@@ -17,28 +17,28 @@ class Esewa {
   final purchaseController = Get.put(PurchaseControler());
   pay(String courseId, String price, String courseName) {
     try {
-      EsewaFlutterSdk.initPayment(
-        esewaConfig: EsewaConfig(
-          environment: Environment.test,
-          clientId: client_id,
-          secretId: secete_key,
-        ),
-        esewaPayment: EsewaPayment(
-          productId: courseId,
-          productName: courseName,
-          productPrice: price,
-          callbackUrl: 'https://example.com/callback',
-        ),
-        onPaymentSuccess: (EsewaPaymentSuccessResult result) {
-          verify(result, courseId, price);
-        },
-        onPaymentFailure: () {
-          debugPrint('FAILURE');
-        },
-        onPaymentCancellation: () {
-          debugPrint('CANCEL');
-        },
-      );
+      // EsewaFlutterSdk.initPayment(
+      //   esewaConfig: EsewaConfig(
+      //     environment: Environment.test,
+      //     clientId: client_id,
+      //     secretId: secete_key,
+      //   ),
+      //   esewaPayment: EsewaPayment(
+      //     productId: courseId,
+      //     productName: courseName,
+      //     productPrice: price,
+      //     callbackUrl: 'https://example.com/callback',
+      //   ),
+      //   onPaymentSuccess: (EsewaPaymentSuccessResult result) {
+      //     verify(result, courseId, price);
+      //   },
+      //   onPaymentFailure: () {
+      //     debugPrint('FAILURE');
+      //   },
+      //   onPaymentCancellation: () {
+      //     debugPrint('CANCEL');
+      //   },
+      // );
     } catch (e) {
       debugPrint('EXCEPTION');
     }

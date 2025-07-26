@@ -1,7 +1,7 @@
 // MAIN FLUTTER RUNNING PAGE
 
 import 'dart:developer';
-
+import 'package:benchmark/app/utils/secure_screen.dart';
 import 'package:benchmark/app/config/color.dart';
 import 'package:benchmark/app/widgets/custom_snackbar.dart';
 import 'package:benchmark/app/widgets/splash_screen.dart';
@@ -12,8 +12,8 @@ import 'package:get_storage/get_storage.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() async {
-  // Initialize the Nepali locale data
   WidgetsFlutterBinding.ensureInitialized();
+  await SecureScreen.enableSecurity(); // Call here to prevent screenshots
 
   await GetStorage.init(); // Initialize GetStorage
   try {
